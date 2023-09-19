@@ -1,0 +1,207 @@
+programa
+{
+		inteiro notas50=100, notas10=100, notas5=100, notas1=100, saldo[10], totalnotas=1 // inicializando variaveis de quantidades de cedulas
+		
+	funcao inicio()  //
+	{
+		
+		
+		
+		para(inteiro i=0; i<10; i++)  // inicializa o saldo dos 10 usuarios com 2 mil reais cada.
+			{
+				saldo[i]=2000
+			
+			}
+		
+			caixa()
+}
+	
+
+	funcao caixa(){
+
+	enquanto(totalnotas!=0) // enquanto houver cedulas diferente de 0 no caixa, continua o programa
+		{
+		
+		cadeia senha[10], senhaCliente    //vetor com senhas, e variavel de senha informada por cliente.
+		inteiro id[10], cliente=0, saque[10], saque2[10], i  // vetor com id's, saques e variavel de id informada por cliente.
+		inteiro n50=0, n10=0, n5=0, n1=0 	//variaveis para controle de notas, iniciadas com 0
+		
+
+
+	
+				
+		id[0]=1 senha[0]="1111"	// alimentando vetores com os numeros de usuario e senha.
+		id[1]=2 senha[1]="2222"
+		id[2]=3 senha[2]="3333"
+		id[3]=4 senha[3]="4444"
+		id[4]=5 senha[4]="5555"
+		id[5]=6 senha[5]="6666"
+		id[6]=7 senha[6]="7777"
+		id[7]=8 senha[7]="8888"
+		id[8]=9 senha[8]="9999"
+		id[9]=10 senha[9]="1010"
+		
+		
+		 
+
+		totalnotas = notas1+notas5+notas10+notas50 // inicia, para ter controle do valor disponivel
+										  //no caixa, para informar ao usuario se ele pode sacar ou nao.
+		
+
+		
+	
+		escreva("\nPor favor seu ID: ")	 // cliente informa ID de 1 a 10 e armazena na variavel
+		leia(cliente)
+
+		escreva("Digite a senha: ")	//cliente informa senha e armazena na variavel
+		leia(senhaCliente)
+
+		limpa()
+
+		para(inteiro i2=0;i2<10;i2++){ // checagem se ID e Senha informada
+								//estão nos vetores ID e Senha para prosseguir.
+	
+		
+		se(cliente==id[i2] e senhaCliente==senha[i2]){ // se ID e Senha informados forem encontrados, continua..
+			
+
+			//inicia coleta de dados com usuario.
+			
+			
+			escreva("Olá cliente numero ", id[i2], "\n") // saudações ao usuario 
+			escreva("Valor disponivel em sua conta: ",saldo[i2], "\n") // informa valor disponivel para saque
+			escreva("Informe o valor de saque: ") // pede valor de saque para usuario
+			leia(saque[i2])
+			
+
+			se(saque[i2]!=0 e saque[i2]<=2000 e totalnotas>0 ){ // se saque for diferente de "0" que finaliza o programa.
+												      // e for abaixo de 2 mil reais que é o limite por cliente
+												     // e houver cedulas disponiveis, ele continua a leitura do programa.
+				
+				
+				
+				se(saldo[i2]>=saque[i2]){ 	// verifica se saldo é maior ou igual valor do soque desejado pelo usuario.
+
+					saque2[i2] = saque[i2]  // caso seja, vetor saque, recebe valor informado,
+
+				
+					saldo[i2]-=saque[i2] // desconta do vetor saldo o saque desejado pelo usuario.
+
+
+
+								
+					se(notas50>=1){ 			// antes de liberar o saque, controlar as notas, liberando primeiro as maiores.
+					
+					
+					enquanto(saque[i2]>=50 e notas50>=1){ // enquanto o saque for maior ou igual a 50, E tiverem notas  
+													  //de 50 no caixa, assim proceder saque com essas cedulas.
+                				
+                			n50++	// alimentando variavel de controle de nota // +1 cadeula removida do caixa.
+                			notas50-- // alimentando variavel de notas disponiveis no caixa, // -1 cedula no caixa
+                			saque[i2]-=50   // alimentando veotr de saque. 
+                				
+						}
+					}
+
+					se(notas50<=0){ 		// se notas de 50 nao existirem mais, forem menores que 0...
+
+						escreva("Cedulas de 50 indisponiveis. \n")
+
+						
+					}
+
+				
+					se(notas10>=1){			// continua com as cedulas disponivel de maior valor.
+					
+					enquanto(saque[i2]>=10 e notas10>=1){
+                				n10++
+                				notas10--
+                				saque[i2]-=10
+                				
+						}
+					}
+
+					se(notas10<=0){
+
+						escreva("Cedulas de 5 indisponiveis. \n")
+						
+						
+					}
+					
+					
+					se(notas5>=1){
+					enquanto(saque[i2]>=4 e notas5>=1){
+                				n5++
+                				notas5--
+                				saque[i2]-=5
+                				
+						}
+					}
+
+					se(notas5<=0){
+
+						escreva("Cedulas de 5 indisponiveis. \n")
+						
+						
+					}
+					
+				
+					se(notas1>=1){
+					enquanto(saque[i2]>=1 e notas1>=1){
+                				n1++
+                				notas1--
+                				saque[i2]-=1
+                				
+						}
+					}
+
+					se(notas1<=0){
+
+						escreva("Cedulas de 1 indisponiveis. \n")
+						
+						
+					}
+					totalnotas = notas1+notas5+notas10+notas50 
+					
+					
+
+													//se o programa atendeu todos requisitos do usuaario, tendo o total de notas
+													//no caixa que correspondem o valor desejado pelo usuario, ele informa:
+				
+				
+				
+				// informa quantidade de notas que foram tiradas do caixa.
+				escreva("\n",n50, " notas de 50R$ - " ,n10, " notas de 10R$ - " ,n5, " notas de 5R$ - " ,n1, " notas de 1R$\n") 
+				escreva("Foram debitados ", saque2[i2], " R$ do seu saldo.\n")
+				escreva("Seu saldo: ", saldo[i2], " R$\n")
+
+				
+				
+				}
+
+				senao {
+				escreva("Saldo indisponível.\n") // senao programa informa que nao tem o saldo disponivel.
+				}
+
+				}
+				
+				saque2[i2]=0
+				
+				
+			}
+			
+		}
+			
+		
+		totalnotas = notas1+notas5+notas10+notas50 // após se confirmar o saque, totalnotas, recebe novo valor  atualizado.
+
+	
+	} // fecha o primeiro enquanto do programa, que solicita cedulas diferente de 0 para continuar
+	
+	
+	limpa()
+	escreva("Caixa em manutenção.")  // informa ao usuario que o caixa excedeu o limite de
+	 							    //saques, pois nao há mais cedulas disponiveis.
+	}
+	
+}
