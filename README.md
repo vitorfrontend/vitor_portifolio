@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @vitorfrontend
+- 👋 Hi, I’am @vitorfrontend
 - 👀 I'm interested in new ideas, new proposals, new knowledge and new achievements.
 - 🌱 I'am currently learning systems development, using Java language and Agile methodology.
 - 💞️ I'm looking to collaborate on the development of backend or frontend projects.
