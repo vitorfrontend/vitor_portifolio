@@ -1,0 +1,18 @@
+Software para gestão de micro empresa (Lavação carros)
+
+Tecnologias: Linguagem: Java, Banco de Dados: MySQL
+             Conectividade: JDK
+             Layout: CorelDraw
+
+Requisitos:
+
+Cadastro Funcionario
+Cadastro Cliente
+Cadastro Serviço
+Agendar Serviço
+Editar cadastros (Funcionario, cliente, serviço)
+Tela de Login
+Niveis de acesso para contas de login
+
+
+
