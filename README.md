@@ -3,8 +3,8 @@
 - 🌱 I'am currently learning systems development, using Java language and Agile methodology.
 - 💞️ I'm looking to collaborate on the development of backend and frontend projects.
 - 📫 How to reach me:
-- https://www.linkedin.com/in/vitorhugoti/
-- (47)99618-2941
+- www.linkedin.com/in/vitorhugoti/
+- Whatsapp: (47)99618-2941
 
 
 <!---
